@@ -256,15 +256,17 @@ if __name__=='__main__':
     driver = Edge_driver()
     try:
         #http://aqjy.hfut.edu.cn
-        #https://www.mxdm6.com/
         driver.get("http://aqjy.hfut.edu.cn")
         login(driver)
         click_examine(driver)
         for page in range(50):
             get_question_and_answer(driver)
 
-        input()
+        print('做题完成')
     except Exception as e:
         print(e)
+
+    finally:
+        driver.quit()
 
     print('ok')
